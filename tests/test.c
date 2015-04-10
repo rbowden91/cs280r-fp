@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
+char * foo() {
+    return 3;
+}
+
 
 int main()
 {
-    int x = 3.14;
-    printf("hello, world %f\n", x);
+    char * z = 3;
+    int y = z;
+    char * x = foo();
+    printf("hello, world %s\n", x);
 }
