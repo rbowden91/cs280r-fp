@@ -1,6 +1,10 @@
 # cs280r-fp
 
-Run "make install && bot50" to get started!
+Run `make install && bot50` to get started!
+
+`bot50 -s` will start just the server; `bot50 -b` will open just the browser.
+
+
 
 ## How it works
 The Gedit plugin terminal.py (/usr/lib/i386-linux-gnu/gedit/plugins/terminal.py) was modified to log all of its output
