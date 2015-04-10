@@ -1,0 +1,33 @@
+#!/bin/bash
+
+start_server=false
+start_browser=false
+
+while getopts ":sb" opt; do
+  case $opt in
+    s)
+      start_server=true
+      ;;
+    b)
+      start_browser=true
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [ ! $start_server -o $start_browser ]; then
+    start_server=true
+    start_browser=true
+fi
+
+if [ $start_server ]; then
+    (pgrep bot50.js > /dev/null) && echo "Server is already running!" || (cd /opt/bot50 && ./bot50.js &> /opt/bot50/bot50.log &)
+fi
+
+if [ $start_browser ]; then
+    google-chrome http://localhost:3000
+fi
+
