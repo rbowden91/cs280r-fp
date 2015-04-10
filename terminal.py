@@ -62,7 +62,11 @@ class GeditTerminal(Vte.Terminal):
 
         self.reconfigure_vte()
 
-        self.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell(), '-l', '-i'], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
+        # rewrite for CS50 bot
+        #self.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell(), '-l', '-i'], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
+        # TODO some sort of random number to identify different shell sessions?
+        self.fork_command_full(Vte.PtyFlags.DEFAULT, None, ['/usr/bin/script', '-f', '-q', '-c', '/bin/bash -l -i', '-a',
+        '/opt/bot50/terminal_output'], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
     def do_drag_data_received(self, drag_context, x, y, data, info, time):
         if info == self.TARGET_URI_LIST:
@@ -192,10 +196,6 @@ class GeditTerminalPanel(Gtk.Box):
         self._vte.show()
         self.pack_start(self._vte, True, True, 0)
 
-#### Inserted for CS50 Bot ####
-        self._vte.connect("text-inserted", self.on_vte_text_inserted)
-#### End insert for CS50 Bot ####
-
         self._vte.connect("child-exited", self.on_vte_child_exited)
         self._vte.connect("key-press-event", self.on_vte_key_press)
         self._vte.connect("button-press-event", self.on_vte_button_press)
@@ -204,29 +204,6 @@ class GeditTerminalPanel(Gtk.Box):
         scrollbar = Gtk.Scrollbar.new(Gtk.Orientation.VERTICAL, self._vte.get_vadjustment())
         scrollbar.show()
         self.pack_start(scrollbar, False, False, 0)
-
-#### Inserted for CS50 Bot ####
-
-    def on_vte_text_inserted(self, term):
-        import urllib.request, urllib.parse
-        url = 'http://localhost:3000/terminal'
-
-        # TODO: what if 100 lines isn't right?
-        data = term.get_text_range(0,0,100,100)[0].rstrip()
-
-        # relies on the user not changing the bash prompt
-        idx = data.rfind("jharvard@appliance (")
-        data = data[:idx]
-        idx = data.rfind("jharvard@appliance (")
-        data = data[idx:]
-
-        #if idx != -1:
-        #    data = data[idx:]
-        values = {'data': data}
-        data = urllib.parse.urlencode(values).encode('utf8')
-        response = urllib.request.urlopen(url, data)
-        the_page = response.read()
-#### End insert for CS50 Bot ####
 
     def on_vte_child_exited(self, term):
         for child in self.get_children():
