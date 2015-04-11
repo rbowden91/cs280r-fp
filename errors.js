@@ -5,13 +5,14 @@ exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: implicit declaration of function '(.*?)' is invalid in C99 \\[-Werror,-Wimplicit-function-declaration\\]\n.*\n.*$",
 
     "callback": function(error_string, filename, line, char, function_name) {
+    	return "It looks like you're trying to use the function " + function_name + " on line " + line + " of " + filename + ". But clang doesn't seem to know what that function is by line " + line + "! Did you definitely spell the function correctly? If so, then clang needs a prototype for the function. You can do this by including the appropriate header at the top of this file. Alternatively, you can manually write a prototype yourself, or if the function is defined in this file, you can just move the function definition of " + function_name + " above that of the function in which you are trying to use it.";
     }
 },
 {
     "regex" : "(.*?):(\\d*):(\\d*): error: implicitly declaring library function '(.*?)' with type '(.*?)' \\[-Werror\\]\n.*\n.*\n.*?:\\d*:\\d*: note: please include the header <(.*?)> or explicitly provide a declaration for '.*?'$",
 
     "callback": function(error_string, filename, line, char, function_name, function_type, header_name) {
-    	return error_string;
+    	return "It looks like you're trying to use the function " + function_name + " on line " + line + " of " + filename + ". As clang suggests, you probably want to include <" + header_name + ">. To do that, you can add `#include <stdio.h>` to the top of " + filename + "!";
     }
 },
 {

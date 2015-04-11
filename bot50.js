@@ -1,8 +1,5 @@
 #!/usr/bin/nodejs
 
-// for when it's called from /usr/bin/bot50
-process.chdir('/opt/bot50/');
-
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
