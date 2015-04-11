@@ -6,6 +6,7 @@ $(function() {
         return false;
     });
     socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
+    	msg = msg.replace(/(?:\r\n|\r|\n)/g, '<br />');
+        $('#messages').append($('<li>').html(msg));
     });
 });
