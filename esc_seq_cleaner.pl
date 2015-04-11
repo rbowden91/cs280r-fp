@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 
-# disable stdout buffering
-$|++;
-
 # this script gets rid of all escape sequences (colors, etc.) that the terminal outputs
+# TODO: convert this to javascript somehow
 # http://unix.stackexchange.com/questions/14684/removing-control-chars-including-console-codes-colours-from-script-output
 while (<>) {
     s/ \e[ #%()*+\-.\/]. |

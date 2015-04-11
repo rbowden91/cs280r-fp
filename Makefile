@@ -3,6 +3,7 @@ SHELL:=/bin/bash
 install:
 	sudo mv /usr/lib/i386-linux-gnu/gedit/plugins/terminal{,_backup}.py || true
 	sudo cp terminal.py /usr/lib/i386-linux-gnu/gedit/plugins/terminal.py
+	sudo chmod 644 /usr/lib/i386-linux-gnu/gedit/plugins/terminal.py
 	sudo mkdir -p /opt/bot50/
 	sudo cp -r node_modules public bot50.js errors.js error_suggestions.js esc_seq_cleaner.pl /opt/bot50
 	sudo mkfifo /opt/bot50/terminal_output || true
