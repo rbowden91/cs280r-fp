@@ -6,6 +6,12 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
-.error_messages {
-	background-color: aqua; 
+.error_message {
+	/* background-color: aqua; */
+	background: -webkit-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* Standard syntax */
+    margin-top: 1%;
+    border-radius: 3%;
 }
