@@ -40,3 +40,7 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
     padding-left: 3.5%;
     border-radius: 3%
 }
+
+.youtube_video {
+    width: 96%;
+ }
