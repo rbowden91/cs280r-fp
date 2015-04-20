@@ -39,6 +39,8 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
     padding-top: 1%;
     padding-left: 3.5%;
     border-radius: 3%
+    padding-bottom: 6%;
+    margin-bottom: 5%;
 }
 
 .youtube_video {
