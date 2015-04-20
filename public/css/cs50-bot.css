@@ -14,7 +14,7 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
     background: -moz-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* Standard syntax */
     margin-top: 1%;
-    border-radius: 3%;
+    /* border-radius: 3%; */
     padding: 1%;
 }
 .help_message {
@@ -23,7 +23,7 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
     background: -moz-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* Standard syntax */
     margin-top: 1%;
-    border-radius: 3%;
+    /* border-radius: 3%; */
     width: 95%;
     padding: 1%;
     margin-left: 2%;
@@ -38,7 +38,7 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
     margin-top: 4%;
     padding-top: 1%;
     padding-left: 3.5%;
-    border-radius: 3%
+    /* border-radius: 3%; */
     padding-bottom: 6%;
     margin-bottom: 5%;
 }
