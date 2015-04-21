@@ -13,7 +13,7 @@ exports.errors = [{
     	" this file. Alternatively, you can manually write a prototype yourself, or if the function is " +
     	"defined in this file, you can just move the function definition of " + function_name + " above " +
     	"that of the function in which you are trying to use it. </div> <div class = 'help_video'>" +
-    	" <b> Check out: </b> <br> <br> <iframe class = 'youtube_video' width='960' height='540' src='https://www.youtube.com/embed/bQnyxpf0vk0?list=PLhQjrBD2T380JCGC3qD3nGpqt8iIjx2fV' frameborder='0' allowfullscreen></iframe> </div>";
+    	" <b> Check out: </b> <br> <br> <iframe class = 'youtube_video' width='960' height='540' src='https://www.youtube.com/embed/CSZLNYF4Klo' frameborder='0' allowfullscreen></iframe> </div>";
     }
 },
 {

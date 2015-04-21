@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python3
+Module=bot50_gedit
+IAge=3
+Name=Bot50
+Description=A Python plugin example
+Authors=Robert Bowden <rob@cs.harvard.edu>
+Copyright=Copyright © 2006 Jesse van den Kieboom <jesse@icecrew.nl>
+Website=http://www.gedit.org
