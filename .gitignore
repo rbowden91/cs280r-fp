@@ -1,2 +1,3 @@
 tmp_colored_output
-tests/buggy_code{1,2}
+tests/buggy_code1
+tests/buggy_code2
