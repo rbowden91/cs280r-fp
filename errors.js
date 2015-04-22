@@ -21,7 +21,7 @@ exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: implicitly declaring library function '(.*?)' with type '(.*?)' \\[-Werror\\]\n.*\n.*\n.*?:\\d*:\\d*: note: please include the header <(.*?)> or explicitly provide a declaration for '.*?'$",
 
     "callback" : function(error_string, filename, line, char, function_name, function_type, header_name) {
-    	return "It looks like you're trying to use the function " + function_name + " on line " + line + " of " + filename + ". As clang suggests, you probably want to include <" + header_name + ">. To do that, you can add `#include <stdio.h>` to the top of " + filename + "!";
+    	return "It looks like you're trying to use the function " + function_name + " on line " + line + " of " + filename + ". As clang suggests, you probably want to include &lt;" + header_name + "&gt;. To do that, you can add <pre>#include &lt;" + header_name + "&gt;</pre> to the top of " + filename + "!";
     }
 },
 {
