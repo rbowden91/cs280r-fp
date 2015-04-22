@@ -163,6 +163,12 @@ exports.errors = [{
     "callback" : function (error_string, filename, line, char) {
         return "You're missing a brace on line " + line + ". You might want to add a brace on this line to match a brace from earlier in the code.";
     }
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: division by zero is undefined \\[-Werror,-Wdivision-by-zero\\]\n.*$",
+    "callback" : function (error_string, filename, line, char) {
+        return "You're dividing by zero on line " + line + ", but division by zero is an undefined operation.";
+    }
 }
     // incompatible pointer types returning 'int **' from a function with result type 'int *'; dereference with * (test19)
     // incompatible pointer types returning 'int *' from a function with result type 'int **'; take the address with & (test20)
@@ -184,7 +190,6 @@ exports.errors = [{
     // expected parameter declarator (test38)
     // control reaches end of non-void function (test39)
     // undefined reference to `main' (test40)
-    // division by zero is undefined (41)
     // remainder by zero is undefined (42)
 
     // struct stuff?
