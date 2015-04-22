@@ -1,0 +1,28 @@
+Script started on Mon May  4 17:51:11 2015
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:18:5: [0m[0;1;31merror: [0m[1mimplicitly declaring library function 'printf' with type 'int (const char *, ...)'
+      [-Werror][0m
+    printf("Enter positive integer values for the following: \n");
+[0;1;32m    ^
+[0m[1mbuggy_code1.c:18:5: [0m[0;1;30mnote: [0mplease include the header <stdio.h> or explicitly provide a declaration for
+      'printf'[0m
+[1mbuggy_code1.c:35:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:35:21: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'd'[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                    ^
+[0m[1mbuggy_code1.c:49:23: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+        fsf = GetInt()
+[0;1;32m                      ^
+[0m[0;32m                      ;
+[0m[1mbuggy_code1.c:116:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ 
+Script done on Mon May  4 17:52:02 2015

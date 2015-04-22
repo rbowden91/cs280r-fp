@@ -46,9 +46,9 @@ main(void)
     printf("F spotting F:");
     while(true)
     {
-        fsf = GetInt();
+        fsf = GetInt()
         if(fsf >= 0)
-            break
+            break;
         else
             printf("Wrong input. Please Retry:");
     }
