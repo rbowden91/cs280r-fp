@@ -19,6 +19,6 @@ install:
 
 uninstall:
 	sudo mv /usr/lib/i386-linux-gnu/gedit/plugins/terminal{_backup,}.py || true
-	sudo rm -rf /usr/lib/i386-linux-gnu/gedit/plugins/bot50_gedit
+	sudo rm -f /usr/lib/i386-linux-gnu/gedit/plugins/bot50_gedit*
 	sudo rm -rf /opt/bot50/
 	sudo rm -f /usr/bin/bot50
