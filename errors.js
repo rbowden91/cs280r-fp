@@ -6,8 +6,9 @@ exports.errors = [{
 
     "callback": function(error_string, filename, line, char, function_name) {
     	return "<pre class = 'error_message'>" +error_string + "</pre><br>" +
-    	"<div class = 'help_message'> It looks like you're trying to use the function " + function_name +
-    	" on line " + line + " of " + filename + ". But clang doesn't seem to know what that function is" +
+    	"<div class = 'help_message'> It looks like you're trying to use the function <a href='#' class='code-line' data-function='" +
+        function_name + "' data-line='" + line + "' data-filename='" + filename + "'>" + function_name + " on line " + line + " of " + filename +
+        "</a>. But clang doesn't seem to know what that function is" +
     	" by line " + line + "! Did you definitely spell the function correctly? If so, then clang needs" +
     	"a prototype for the function. You can do this by including the appropriate header at the top of" +
     	" this file. Alternatively, you can manually write a prototype yourself, or if the function is " +
