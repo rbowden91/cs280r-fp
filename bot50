@@ -1,15 +1,21 @@
 #!/bin/bash
 
+# TODO: need to make sure Redis server is started?
+
 start_server=false
 start_browser=false
 
-while getopts ":sb" opt; do
+while getopts ":sbk" opt; do
   case $opt in
     s)
       start_server=true
       ;;
     b)
       start_browser=true
+      ;;
+    k)
+      sudo pkill -9 bot50.js
+      exit
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -18,13 +24,13 @@ while getopts ":sb" opt; do
   esac
 done
 
-if [[ ! ($start_server || $start_browser) ]]; then
+if [[ ! ($start_server = true || $start_browser = true) ]]; then
     start_server=true
     start_browser=true
 fi
 
 if [[ $start_server = true ]]; then
-    (pgrep bot50.js > /dev/null) && echo "Server is already running!" || (cd /opt/bot50 && ./bot50.js &> /opt/bot50/bot50.log &)
+    (pgrep bot50.js > /dev/null) && echo "Server is already running!" || ((cd /opt/bot50 && ./bot50.js &>> /opt/bot50/bot50.log &) && echo "Server started!")
 fi
 
 if [[ $start_browser = true ]]; then
