@@ -1,10 +1,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font: 13px Helvetica, Arial; }
+body { font: 13px Helvetica, Arial; text-rendering: optimizeLegibility; }
 form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
 form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
 form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
 #messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { padding: 5px 10px; }
+#messages li { font-size: 18px; padding: 5px 10px; border-bottom: 1px solid black; }
 
 .header {
     'width': 100%;
@@ -29,16 +29,22 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 }
 
 #messages .new {
-    background: rgb(255,255,133);
+    background: rgb(255,255,200);
 }
 
 .error_message {
-	/* background-color: aqua; */
-	background: -webkit-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgb(144,144,144), rgb(200,200,200)); /* Standard syntax */
-    margin-top: 1%;
+    background: rgba(144,144,144,.5);
+
+	/* replicate the effects of a "pre" tag */
+	display: block;
+	font-family: monospace;
+	white-space: pre;
+	margin: 1em 0;
+
+	font-size:15px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
     /* border-radius: 3%; */
     padding: 1%;
 }

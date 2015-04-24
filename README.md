@@ -2,8 +2,10 @@
 
 Run `make install && bot50` to get started!
 
-`bot50 -s` will start just the server; `bot50 -b` will open just the browser.
-
+`bot50` will start the server and open a browser window for the bot.
+`bot50 -s` will start just the server.
+`bot50 -b` will open just the browser window.
+`bot50 -k` will kill any active server.
 
 
 ## How it works

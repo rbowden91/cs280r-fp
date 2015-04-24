@@ -9,7 +9,7 @@ $(function() {
     $('body').on('click', '.code-line', function(e) {
         var $this = $(e.target);
         var data = {
-            'function': $this.data('function'),
+            'char': $this.data('char'),
             'filename': $this.data('filename'),
             'line': $this.data('line')
         };

@@ -1,7 +1,6 @@
 SHELL:=/bin/bash
 
 install:
-	# start redis server
 	sudo apt-get install redis-server python3-setuptools
 	sudo easy_install3 redis
 	sudo chmod 644 /usr/local/lib/python3.4/dist-packages/*

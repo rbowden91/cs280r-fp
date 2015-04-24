@@ -1,14 +1,24 @@
 // Macros?
 // TODO: how should flags be handled?
 
+// a function "foo" defined in exports.common is accessible in the callbacks of exports.errors as "this.foo"
+exports.common = {
+    'line_link': function(filename, line, char, message) {
+    	// provide a default message
+    	if (typeof message === 'undefined') {
+	    message = "line " + line + " of " + filename;
+	}
+	return "<a href='#' class='code-line' data-line='" + line + "' data-filename='" +
+		 filename + "' data-char='" + char + "'>" + message + "</a>";
+    }
+};
+
 exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: implicit declaration of function '(.*?)' is invalid in C99 \\[-Werror,-Wimplicit-function-declaration\\]\n.*\n.*$",
 
     "callback": function(error_string, filename, line, char, function_name) {
-    	return "<pre class = 'error_message'>" +error_string + "</pre><br>" +
-    	"<div class = 'help_message'> It looks like you're trying to use the function <a href='#' class='code-line' data-function='" +
-        function_name + "' data-line='" + line + "' data-filename='" + filename + "'>" + function_name + " on line " + line + " of " + filename +
-        "</a>. But clang doesn't seem to know what that function is" +
+    	return "<div class='help_message'> It looks like you're trying to use the function " + function_name + " on " +
+    	this.line_link(filename, line, char) + ". But clang doesn't seem to know what that function is" +
     	" by line " + line + "! Did you definitely spell the function correctly? If so, then clang needs" +
     	"a prototype for the function. You can do this by including the appropriate header at the top of" +
     	" this file. Alternatively, you can manually write a prototype yourself, or if the function is " +
@@ -21,7 +31,8 @@ exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: implicitly declaring library function '(.*?)' with type '(.*?)' \\[-Werror\\]\n.*\n.*\n.*?:\\d*:\\d*: note: please include the header <(.*?)> or explicitly provide a declaration for '.*?'$",
 
     "callback" : function(error_string, filename, line, char, function_name, function_type, header_name) {
-    	return "It looks like you're trying to use the function " + function_name + " on line " + line + " of " + filename + ". As clang suggests, you probably want to include &lt;" + header_name + "&gt;. To do that, you can add <pre>#include &lt;" + header_name + "&gt;</pre> to the top of " + filename + "!";
+    	return "It looks like you're trying to use the function " + function_name + " on " +
+    	this.line_link(filename, line, char) + ". As clang suggests, you probably want to include the " + header_name + " header file. To do that, you can add: <pre style='margin: 1em 1em'>#include &lt;" + header_name + "&gt;</pre> to the top of " + filename + "!";
     }
 },
 {
