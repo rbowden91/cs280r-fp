@@ -1,0 +1,265 @@
+Script started on Fri Apr 24 09:33:27 2015
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (~/cs280r-fp/tests): PS1='\u@\h (\W) \D{%T}: '
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:33:39: [H[2Jjharvard@appliance (tests) 09:33:39: echo "Ben start"
+Ben start
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:33:47: [H[2Jjharvard@appliance (tests) 09:33:47: make buggy_y[1Pyy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:17:5: [0m[0;1;31merror: [0m[1mimplicitly declaring library function 'printf'
+      with type 'int (const char *, ...)' [-Werror][0m
+    printf("Enter positive integer values for the following: \n");
+[0;1;32m    ^
+[0m[1mbuggy_code1.c:17:5: [0m[0;1;30mnote: [0mplease include the header <stdio.h> or explicitly
+      provide a declaration for 'printf'[0m
+[1mbuggy_code1.c:34:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:34:21: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'd'[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                    ^
+[0m[1mbuggy_code1.c:48:23: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+        fsf = GetInt()
+[0;1;32m                      ^
+[0m[0;32m                      ;
+[0m[1mbuggy_code1.c:117:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:15:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m5 errors generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:36:50: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:35:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:49:23: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+        fsf = GetInt()
+[0;1;32m                      ^
+[0m[0;32m                      ;
+[0m[1mbuggy_code1.c:118:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m3 errors generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:38:18: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:35:26: [0m[0;1;31merror: [0m[1mformat specifies type 'int' but the argument
+      has type 'char *' [-Werror,-Wformat][0m
+            printf("%d", "Wrong input. Please Retry:");
+[0;1;32m                    ~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[0;32m                    %s
+[0m[1mbuggy_code1.c:49:23: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+        fsf = GetInt()
+[0;1;32m                      ^
+[0m[0;32m                      ;
+[0m[1mbuggy_code1.c:118:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m3 errors generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:38:22: make buggy_code1[Kmake buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:35:26: [0m[0;1;31merror: [0m[1mformat specifies type 'int' but the argument
+      has type 'char *' [-Werror,-Wformat][0m
+            printf("%d", "Wrong input. Please Retry:");
+[0;1;32m                    ~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[0;32m                    %s
+[0m[1mbuggy_code1.c:118:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m2 errors generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:38:32: make buggy_code1echo "Ben start"make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:35:26: [0m[0;1;31merror: [0m[1mformat specifies type 'int' but the argument
+      has type 'char *' [-Werror,-Wformat][0m
+            printf("%d", "Wrong input. Please Retry:");
+[0;1;32m                    ~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[0;32m                    %s
+[0m[1mbuggy_code1.c:22:42: [0m[0;1;31merror: [0m[1munused variable 'total'
+      [-Werror,-Wunused-variable][0m
+    int msf = 0,fsm = 0,fsf = 0,msm = 0, total = 0;
+[0;1;32m                                         ^
+[0m2 errors generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:38:50: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:35:26: [0m[0;1;31merror: [0m[1mformat specifies type 'int' but the argument
+      has type 'char *' [-Werror,-Wformat][0m
+            printf("%d", "Wrong input. Please Retry:");
+[0;1;32m                    ~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[0;32m                    %s
+[0m1 error generated.
+make: *** [buggy_code1] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:39:23: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:39:35: echo "done  1"
+done1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:39:47: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+[1mbuggy_code2.c:36:9: [0m[0;1;31merror: [0m[1mexpected expression[0m
+        )
+[0;1;32m        ^
+[0m[1mbuggy_code2.c:41:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1mbuggy_code2.c:41:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1mbuggy_code2.c:55:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1mbuggy_code2.c:55:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1mbuggy_code2.c:55:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1mbuggy_code2.c:55:22: [0m[0;1;31merror: [0m[1mexpression result unused
+      [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1mbuggy_code2.c:92:35: [0m[0;1;31merror: [0m[1mdivision by zero is undefined
+      [-Werror,-Wdivision-by-zero][0m
+                number2 = number2 / 0;
+[0;1;32m                                  ^ ~
+[0m7 errors generated.
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:40:40: [H[2Jjharvard@appliance (tests) 09:40:40: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+[1mbuggy_code2.c:36:9: [0m[0;1;31merror: [0m[1mexpected expression[0m
+        )
+[0;1;32m        ^
+[0m[1mbuggy_code2.c:41:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1mbuggy_code2.c:41:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1mbuggy_code2.c:55:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1mbuggy_code2.c:55:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1mbuggy_code2.c:55:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1mbuggy_code2.c:55:22: [0m[0;1;31merror: [0m[1mexpression result unused
+      [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1mbuggy_code2.c:92:35: [0m[0;1;31merror: [0m[1mdivision by zero is undefined
+      [-Werror,-Wdivision-by-zero][0m
+                number2 = number2 / 0;
+[0;1;32m                                  ^ ~
+[0m7 errors generated.
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:41:30: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+[1mbuggy_code2.c:40:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1mbuggy_code2.c:40:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1mbuggy_code2.c:54:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1mbuggy_code2.c:54:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1mbuggy_code2.c:54:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1mbuggy_code2.c:54:22: [0m[0;1;31merror: [0m[1mexpression result unused
+      [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1mbuggy_code2.c:91:35: [0m[0;1;31merror: [0m[1mdivision by zero is undefined
+      [-Werror,-Wdivision-by-zero][0m
+                number2 = number2 / 0;
+[0;1;32m                                  ^ ~
+[0m6 errors generated.
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:41:46: make buggy_code2[Kmake buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+[1mbuggy_code2.c:54:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1mbuggy_code2.c:54:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1mbuggy_code2.c:54:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1mbuggy_code2.c:54:22: [0m[0;1;31merror: [0m[1mexpression result unused
+      [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1mbuggy_code2.c:91:35: [0m[0;1;31merror: [0m[1mdivision by zero is undefined
+      [-Werror,-Wdivision-by-zero][0m
+                number2 = number2 / 0;
+[0;1;32m                                  ^ ~
+[0m5 errors generated.
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:42:16: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+[1mbuggy_code2.c:91:35: [0m[0;1;31merror: [0m[1mdivision by zero is undefined
+      [-Werror,-Wdivision-by-zero][0m
+                number2 = number2 / 0;
+[0;1;32m                                  ^ ~
+[0m1 error generated.
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:42:35: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 8 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 9 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 10 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 19 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 20 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 21 has invalid symbol index 22
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_line): relocation 0 has invalid symbol index 2
+/usr/bin/../lib/gcc/i686-linux-gnu/4.8/../../../i386-linux-gnu/crt1.o: In function `_start':
+(.text+0x18): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [buggy_code2] Error 1
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:42:56: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+]0;jharvard@appliance:/home/jharvard/cs280r-fp/tests]7;file://appliance/home/jharvard/cs280r-fp/testsjharvard@appliance (tests) 09:43:15: 
