@@ -1,0 +1,301 @@
+Script started on Fri Apr 24 08:16:44 2015
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+buggy_code2.c:31:9: error: expected expression
+        )
+        ^
+buggy_code2.c:36:9: error: implicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        printff("Invalid. \n");
+        ^
+buggy_code2.c:36:9: note: did you mean 'printf'?
+/usr/include/stdio.h:362:12: note: 'printf' declared here
+extern int printf (const char *__restrict __format, ...);
+           ^
+buggy_code2.c:50:18: error: incompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion]
+            b[k] = a k];
+                 ^ ~
+buggy_code2.c:50:21: error: expected ';' after expression
+            b[k] = a k];
+                    ^
+                    ;
+buggy_code2.c:50:23: error: extraneous ']' before ';'
+            b[k] = a k];
+                      ^
+buggy_code2.c:50:22: error: expression result unused
+      [-Werror,-Wunused-value]
+            b[k] = a k];
+                     ^
+buggy_code2.c:87:35: error: division by zero is undefined
+      [-Werror,-Wdivision-by-zero]
+                number2 = number2 / 0;
+                                  ^ ~
+7 errors generated.
+make: *** [buggy_code2] Error 1
+jharvard@appliance (~/cs280r-fp/tests): PS1='\u@\h (\W) \D{%T}: '
+jharvard@appliance (tests) 08:18:26: jharvard@appliance (tests) 08:18:26: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:18:5: error: implicitly declaring library function 'printf'
+      with type 'int (const char *, ...)' [-Werror]
+    printf("Enter positive integer values for the following: \n");
+    ^
+buggy_code1.c:18:5: note: please include the header <stdio.h> or explicitly
+      provide a declaration for 'printf'
+buggy_code1.c:35:20: error: expected expression
+            printf(%d, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:35:21: error: use of undeclared identifier 'd'
+            printf(%d, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:49:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:116:1: error: expected '}'
+^
+buggy_code1.c:16:1: note: to match this '{'
+{
+^
+5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:18:35: jharvard@appliance (tests) 08:18:35: echo "Start Emma"
+Start Emma
+jharvard@appliance (tests) 08:18:49: jharvard@appliance (tests) 08:18:49: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:18:5: error: implicitly declaring library function 'printf'
+      with type 'int (const char *, ...)' [-Werror]
+    printf("Enter positive integer values for the following: \n");
+    ^
+buggy_code1.c:18:5: note: please include the header <stdio.h> or explicitly
+      provide a declaration for 'printf'
+buggy_code1.c:35:20: error: expected expression
+            printf(%d, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:35:21: error: use of undeclared identifier 'd'
+            printf(%d, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:49:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:116:1: error: expected '}'
+^
+buggy_code1.c:16:1: note: to match this '{'
+{
+^
+5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:19:17: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:36:20: error: expected expression
+            printf(%d, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:36:21: error: use of undeclared identifier 'd'
+            printf(%d, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:50:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+4 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:20:11: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:36:20: error: expected expression
+            printf(%s, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:36:21: error: use of undeclared identifier 's'
+            printf(%s, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:50:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+4 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:20:37: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:50:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+2 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:20:54: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:21:08: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:23:42: error: unused variable 'total'
+      [-Werror,-Wunused-variable]
+    int msf = 0,fsm = 0,fsf = 0,msm = 0, total = 0;
+                                         ^
+1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (tests) 08:21:34: make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+jharvard@appliance (tests) 08:22:09: echo "done1"
+done1
+jharvard@appliance (tests) 08:22:21: echo "start2"
+start2
+jharvard@appliance (tests) 08:25:21: jharvard@appliance (tests) 08:25:21: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+buggy_code2.c:31:9: error: expected expression
+        )
+        ^
+buggy_code2.c:36:9: error: implicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        printff("Invalid. \n");
+        ^
+buggy_code2.c:36:9: note: did you mean 'printf'?
+/usr/include/stdio.h:362:12: note: 'printf' declared here
+extern int printf (const char *__restrict __format, ...);
+           ^
+buggy_code2.c:50:18: error: incompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion]
+            b[k] = a k];
+                 ^ ~
+buggy_code2.c:50:21: error: expected ';' after expression
+            b[k] = a k];
+                    ^
+                    ;
+buggy_code2.c:50:23: error: extraneous ']' before ';'
+            b[k] = a k];
+                      ^
+buggy_code2.c:50:22: error: expression result unused
+      [-Werror,-Wunused-value]
+            b[k] = a k];
+                     ^
+buggy_code2.c:87:35: error: division by zero is undefined
+      [-Werror,-Wdivision-by-zero]
+                number2 = number2 / 0;
+                                  ^ ~
+7 errors generated.
+make: *** [buggy_code2] Error 1
+jharvard@appliance (tests) 08:25:55: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+buggy_code2.c:36:9: error: implicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        printff("Invalid. \n");
+        ^
+buggy_code2.c:36:9: note: did you mean 'printf'?
+/usr/include/stdio.h:362:12: note: 'printf' declared here
+extern int printf (const char *__restrict __format, ...);
+           ^
+buggy_code2.c:50:18: error: incompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion]
+            b[k] = a k];
+                 ^ ~
+buggy_code2.c:50:21: error: expected ';' after expression
+            b[k] = a k];
+                    ^
+                    ;
+buggy_code2.c:50:23: error: extraneous ']' before ';'
+            b[k] = a k];
+                      ^
+buggy_code2.c:50:22: error: expression result unused
+      [-Werror,-Wunused-value]
+            b[k] = a k];
+                     ^
+buggy_code2.c:87:35: error: division by zero is undefined
+      [-Werror,-Wdivision-by-zero]
+                number2 = number2 / 0;
+                                  ^ ~
+6 errors generated.
+make: *** [buggy_code2] Error 1
+jharvard@appliance (tests) 08:26:19: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+buggy_code2.c:36:9: error: implicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        printff("Invalid. \n");
+        ^
+buggy_code2.c:36:9: note: did you mean 'printf'?
+/usr/include/stdio.h:362:12: note: 'printf' declared here
+extern int printf (const char *__restrict __format, ...);
+           ^
+buggy_code2.c:50:18: error: incompatible pointer to integer conversion
+      assigning to 'int' from 'int [count]' [-Werror,-Wint-conversion]
+            b[k] = a k];
+                 ^ ~
+buggy_code2.c:50:21: error: expected ';' after expression
+            b[k] = a k];
+                    ^
+                    ;
+buggy_code2.c:50:23: error: extraneous ']' before ';'
+            b[k] = a k];
+                      ^
+buggy_code2.c:50:22: error: expression result unused
+      [-Werror,-Wunused-value]
+            b[k] = a k];
+                     ^
+5 errors generated.
+make: *** [buggy_code2] Error 1
+jharvard@appliance (tests) 08:26:49: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+buggy_code2.c:36:9: error: implicit declaration of function 'printff' is
+      invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        printff("Invalid. \n");
+        ^
+buggy_code2.c:36:9: note: did you mean 'printf'?
+/usr/include/stdio.h:362:12: note: 'printf' declared here
+extern int printf (const char *__restrict __format, ...);
+           ^
+1 error generated.
+make: *** [buggy_code2] Error 1
+jharvard@appliance (tests) 08:27:27: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 8 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 9 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 10 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 19 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 20 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_info): relocation 21 has invalid symbol index 22
+/usr/bin/ld: /usr/lib/debug/usr/lib/i386-linux-gnu/crt1.o(.debug_line): relocation 0 has invalid symbol index 2
+/usr/bin/../lib/gcc/i686-linux-gnu/4.8/../../../i386-linux-gnu/crt1.o: In function `_start':
+(.text+0x18): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [buggy_code2] Error 1
+jharvard@appliance (tests) 08:27:47: make buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code2.c  -lcs50 -lm -o buggy_code2
+jharvard@appliance (tests) 08:28:52: echo "done"
+done
+jharvard@appliance (tests) 08:29:02: 
+Script done on Fri Apr 24 08:37:00 2015
