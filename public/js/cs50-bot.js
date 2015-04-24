@@ -17,6 +17,26 @@ $(function() {
         return false;
     });
 
+    socket.on('unsaved', function(data) {
+    	unsaved = JSON.parse(data).unsaved;
+
+	// TODO: only add this message if the unsaved files are relevant?
+	var msg = 'Be careful! The file';
+	msg += unsaved.length > 1 ? 's' : '';
+	msg += ' ' + unsaved.join(', ');
+	msg += unsaved.length > 1 ? ' are' : ' is';
+	msg += ' unsaved in gedit!';
+
+        $new_message = $('<li>').html(msg);
+        $new_message.addClass('new');
+
+        // add the new message to the page
+        $('#messages').append($new_message);
+
+        // go to the bottom of the window
+        window.scrollTo(0,document.body.scrollHeight);
+    });
+
     socket.on('chat message', function(msg) {
     	msg = msg.replace(/(?:\r\n|\r|\n)/g, '<br />');
 

@@ -10,18 +10,26 @@ class RedisListener(threading.Thread):
     def __init__(self, bot):
         threading.Thread.__init__(self)
         self.bot = bot
-        self.redis = redis.Redis()
-        self.pubsub = self.redis.pubsub()
-        self.pubsub.subscribe(['line'])
+        self.publisher = redis.Redis()
+        self.pubsub = redis.Redis().pubsub()
+        self.pubsub.subscribe(['line', 'get_unsaved'])
 
     def run(self):
         for item in self.pubsub.listen():
             if item['type'] == 'message':
+
                 # XXX why does this send as bytes instead of utf8
-                #print(str.decode(item['data'], 'utf-8'))
                 data = json.loads(item['data'].decode(encoding='UTF-8'))
-                # (line - 1), since 0-indexed
-                self.bot.goto_line(data['filename'], data['line'] - 1, data['char'])
+                if item['channel'] == 'line':
+
+                    # (line - 1), since 0-indexed
+                    self.bot.goto_line(data['filename'], data['line'] - 1, data['char'])
+
+                # channel is 'get_unsaved'
+                else:
+                    unsaved = self.bot.get_unsaved()
+                    if len(unsaved) > 0:
+                        self.publisher.publish('unsaved', json.dumps({"unsaved": unsaved}))
 
 class CS50Bot(GObject.Object, Gedit.AppActivatable):
     __gtype_name__ = "CS50BotPlugin"
@@ -44,6 +52,14 @@ class CS50Bot(GObject.Object, Gedit.AppActivatable):
 
     def do_deactivate(self):
         pass
+
+    def get_unsaved(self):
+        unsaved = []
+        # TODO: file might be unsaved across multiple windows
+        for window in self.app.get_windows():
+            for doc in window.get_unsaved_documents():
+                unsaved.append(doc.get_short_name_for_display())
+        return unsaved
 
     def goto_line(self, filename, line, char):
         # XXX get_windows vs get_main_windows?
