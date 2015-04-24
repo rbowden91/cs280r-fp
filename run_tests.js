@@ -3,8 +3,8 @@ var execSync = require('execsync');
 var es = require('./error_suggestions');
 
 fs.readdir('tests', function(err, files) {
-    process.chdir('tests');
-    var output = execSync('make buggy');
+    process.chdir('tests/unit');
+    var output = execSync('make test40');
     var response = es.suggest(output);
     console.log(response);
     //for (var i = 0; i < files.length; i++) {

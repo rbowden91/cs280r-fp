@@ -57,18 +57,24 @@ class CS50Bot(GObject.Object, Gedit.AppActivatable):
                     tab = Gedit.Tab.get_from_document(doc)
                     window.set_active_tab(tab)
 
-                    textbuffer = tab.get_view().get_buffer()
+                    # scroll to the targeted line in the document
+                    view = tab.get_view()
+                    view.scroll_to_cursor();
 
-		    # delete any previously highlighted lines
-                    start = textbuffer.get_start_iter()
-                    end = textbuffer.get_end_iter()
-                    textbuffer.remove_tag_by_name("highlight-error", start, end)
+                    tag_table = doc.get_tag_table()
 
-		    # highlight the line with the error
-                    iter1 = textbuffer.get_iter_at_line(line)
-                    iter2 = textbuffer.get_iter_at_line(line + 1)
-                    textbuffer.create_tag("highlight-error",  background = "yellow")
-                    textbuffer.apply_tag_by_name("highlight-error", iter1, iter2)
+                    if tag_table.lookup("highlight-error") is None:
+                        doc.create_tag("highlight-error",  background = "#C9FFFC", foreground = "#000000")
+                    else:
+                        # delete any previously highlighted lines
+                        start = doc.get_start_iter()
+                        end = doc.get_end_iter()
+                        doc.remove_tag_by_name("highlight-error", start, end)
+
+                    # highlight the line with the error
+                    iter1 = doc.get_iter_at_line(line)
+                    iter2 = doc.get_iter_at_line(line + 1)
+                    doc.apply_tag_by_name("highlight-error", iter1, iter2)
 
                     break
 

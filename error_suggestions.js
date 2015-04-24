@@ -10,9 +10,14 @@ for (var i in errors.errors) {
 exports.suggest = function(terminal_output) {
     var num_errors = 0;
 
-    var num_error_match = /(\d+) errors generated./m.exec(terminal_output);
+    var num_error_match = /(\d+) error(?:s)? generated.|Error 1$/m.exec(terminal_output);
     if (num_error_match !== null) {
 	var num_errors = parseInt(num_error_match[1]);
+
+	// linker error
+	if (typeof num_error_match[1] === 'undefined') {
+	    num_errors = 1;
+	}
 
 	for (var i in errors.errors) {
 	    var m = errors.errors[i].compiled.exec(terminal_output);

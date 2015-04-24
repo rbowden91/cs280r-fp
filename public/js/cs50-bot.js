@@ -7,7 +7,7 @@ $(function() {
     });
 
     $('body').on('click', '.code-line', function(e) {
-        var $this = $(e.target);
+        var $this = $(e.target).closest('a');
         var data = {
             'char': $this.data('char'),
             'filename': $this.data('filename'),
