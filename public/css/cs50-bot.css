@@ -5,7 +5,32 @@ form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
 form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; }
-#messages li:nth-child(odd) { background: #eee; }
+
+.header {
+    'width': 100%;
+    border-bottom: 1px solid black;
+	background: -webkit-linear-gradient(rgb(194,194,194), rgb(240,240,240)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(194,194,194), rgb(240,240,240)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(194,194,194), rgb(240,240,240)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(194,194,194), rgb(240,240,240)); /* Standard syntax */
+    font-size: 250%;
+}
+
+.empty {
+    margin: 0 auto;
+    width: 600px;
+    text-align:center;
+    margin-top: 10px;
+    font-size: 200%;
+}
+
+#messages .old:nth-child(odd) {
+    background: #eee;
+}
+
+#messages .new {
+    background: rgb(255,255,133);
+}
 
 .error_message {
 	/* background-color: aqua; */

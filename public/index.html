@@ -5,10 +5,19 @@
     <link rel="stylesheet" type="text/css" href="css/cs50-bot.css">
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div class="header">
+      CS50 Bot
+    </div>
+    <ul id="messages">
+        <div class="empty">
+            You've got no messages.<br/>Compile something in gedit to get things started!
+        </div>
+    </ul>
+    <!--
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+    -->
     <script src="js/socket.io.js"></script>
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/cs50-bot.js"></script>
