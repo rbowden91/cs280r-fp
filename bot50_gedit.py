@@ -20,8 +20,9 @@ class RedisListener(threading.Thread):
 
                 # XXX why does this send as bytes instead of utf8
                 data = json.loads(item['data'].decode(encoding='UTF-8'))
-                if item['channel'] == 'line':
+                channel = item['channel'].decode(encoding='UTF-8')
 
+                if channel == 'line':
                     # (line - 1), since 0-indexed
                     self.bot.goto_line(data['filename'], data['line'] - 1, data['char'])
 
