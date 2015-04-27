@@ -9,7 +9,7 @@ var es = require('./error_suggestions');
 var fs = require('fs');
 var spawn = require('child_process').spawn;
 var execSync = require('execsync');
-
+var redis = require('redis').createClient();
 
 terminal_output = spawn('cat', ['terminal_output']);
 
@@ -51,8 +51,9 @@ terminal_output.on('close', function (code) {
 app.use(express.static('public'));
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+  socket.on('line', function(msg){
+    //io.emit('line', msg);
+    redis.publish('line', msg);
   });
 });
 

@@ -1,71 +1,60 @@
 from gettext import gettext as _
 from gi.repository import GObject, Gtk, Gedit
 
-# Menu item example, insert a new item in the Tools menu
-ui_str = """<ui>
-  <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
-      <placeholder name="ToolsOps_2">
-        <menuitem name="ExamplePy" action="ExamplePy"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
-class ExamplePyWindowActivatable(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "ExamplePyWindowActivatable"
+import redis
+import threading
+import json
 
-    window = GObject.property(type=Gedit.Window)
+class RedisListener(threading.Thread):
+
+    def __init__(self, bot):
+        threading.Thread.__init__(self)
+        self.bot = bot
+        self.redis = redis.Redis()
+        self.pubsub = self.redis.pubsub()
+        self.pubsub.subscribe(['line'])
+
+    def run(self):
+        for item in self.pubsub.listen():
+            if item['type'] == 'message':
+                # XXX why does this send as bytes instead of utf8
+                #print(str.decode(item['data'], 'utf-8'))
+                data = json.loads(item['data'].decode(encoding='UTF-8'))
+                # (line - 1), since 0-indexed
+                self.bot.goto_line(data['filename'], data['function'], data['line'] - 1)
+
+class CS50Bot(GObject.Object, Gedit.AppActivatable):
+    __gtype_name__ = "CS50BotPlugin"
+
+    app = GObject.property(type=Gedit.App)
+
+    # TODO is untouched
 
     def __init__(self):
         GObject.Object.__init__(self)
+        RedisListener(self).start()
 
     def do_activate(self):
-        # Insert menu items
-        self._insert_menu()
+        #views = self.app.get_views()
+        #doc = self.window.get_active_document()
+        #if not doc:
+        #    return
+        #doc.goto_line(3)
+        pass
 
     def do_deactivate(self):
-        # Remove any installed menu items
-        self._remove_menu()
+        pass
 
-        self._action_group = None
+    def goto_line(self, filename, function, line):
+        # XXX get_windows vs get_main_windows?
+        for window in self.app.get_windows():
+            for doc in window.get_documents():
+                # XXX is this the right comparison to make?
+                # add in offset?
+                if filename == doc.get_short_name_for_display():
+                    doc.goto_line(line)
 
-    def _insert_menu(self):
-        # Get the Gtk.UIManager
-        manager = self.window.get_ui_manager()
+                    tab = Gedit.Tab.get_from_document(doc)
+                    window.set_active_tab(tab)
+                    break
 
-        # Create a new action group
-        self._action_group = Gtk.ActionGroup("ExamplePyPluginActions")
-        self._action_group.add_actions([("ExamplePy", None, _("Clear document"),
-                                         None, _("Clear the document"),
-                                         self.on_clear_document_activate)])
-
-        # Insert the action group
-        manager.insert_action_group(self._action_group, -1)
-
-        # Merge the UI
-        self._ui_id = manager.add_ui_from_string(ui_str)
-
-    def _remove_menu(self):
-        # Get the Gtk.UIManager
-        manager = self.window.get_ui_manager()
-
-        # Remove the ui
-        manager.remove_ui(self._ui_id)
-
-        # Remove the action group
-        manager.remove_action_group(self._action_group)
-
-        # Make sure the manager updates
-        manager.ensure_update()
-
-    def do_update_state(self):
-        self._action_group.set_sensitive(self.window.get_active_document() != None)
-
-    # Menu activate handlers
-    def on_clear_document_activate(self, action):
-        doc = self.window.get_active_document()
-        if not doc:
-            return
-
-        doc.set_text('')
