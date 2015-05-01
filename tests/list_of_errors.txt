@@ -1,0 +1,24 @@
+semi colon
+don't include stdio.h
+expected '}'
+unused variable
+print %s when you should print %d
+
+division by 0
+printff
+expected identifier or '('
+
+// generates "expected expression" error
+
+int main(void)
+{
+    int x = 3;
+    )
+}
+
+// generates "undefined reference to `main'" linker error
+
+int min()
+{
+    return 0;
+}
