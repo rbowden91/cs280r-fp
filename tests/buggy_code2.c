@@ -12,7 +12,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(void)
+int 
+min(void)
 {
     // inputting card number from user
     printf("Number:");
@@ -27,12 +28,13 @@ int main(void)
     {
         number2 = number2 / 10;
         count ++;
+        )
      
     }
    // returning invalid if the number isn't right.
     if(count != 15 && count != 16 && count != 13)
     {
-        printf("Invalid. \n");
+        printff("Invalid. \n");
         return 1;
     }
     else
@@ -46,7 +48,7 @@ int main(void)
         for(int i = 0; i < count; i++)
         {
             a[k] = number2 % 10;
-            b[k] = a[k];
+            b[k] = a k];
             number2 = number2 / 10;
             k--;
         }
@@ -83,7 +85,7 @@ int main(void)
             while(number2 != 0)
             {
                 sum = sum + (number2 % 10);
-                number2 = number2 / 10;
+                number2 = number2 / 0;
             }
         }
         
