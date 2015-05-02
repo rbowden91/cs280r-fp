@@ -1,0 +1,226 @@
+Script started on Sat May  2 17:11:59 2015
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:31:9: [0m[0;1;31merror: [0m[1mexpected expression[0m
+        )
+[0;1;32m        ^
+[0m[1maaron_buggy_code2.c:36:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is invalid in C99
+      [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1maaron_buggy_code2.c:36:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1maaron_buggy_code2.c:50:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion assigning to 'int' from
+      'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1maaron_buggy_code2.c:50:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1maaron_buggy_code2.c:50:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1maaron_buggy_code2.c:50:22: [0m[0;1;31merror: [0m[1mexpression result unused [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m7 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:31:9: [0m[0;1;31merror: [0m[1mexpected expression[0m
+        )
+[0;1;32m        ^
+[0m[1maaron_buggy_code2.c:36:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is invalid in C99
+      [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1maaron_buggy_code2.c:36:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1maaron_buggy_code2.c:50:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion assigning to 'int' from
+      'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1maaron_buggy_code2.c:50:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1maaron_buggy_code2.c:50:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1maaron_buggy_code2.c:50:22: [0m[0;1;31merror: [0m[1mexpression result unused [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m7 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:36:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'printff' is invalid in C99
+      [-Werror,-Wimplicit-function-declaration][0m
+        printff("Invalid. \n");
+[0;1;32m        ^
+[0m[1maaron_buggy_code2.c:36:9: [0m[0;1;30mnote: [0mdid you mean 'printf'?[0m
+[1m/usr/include/stdio.h:362:12: [0m[0;1;30mnote: [0m'printf' declared here[0m
+extern int printf (const char *__restrict __format, ...);
+[0;1;32m           ^
+[0m[1maaron_buggy_code2.c:50:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion assigning to 'int' from
+      'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1maaron_buggy_code2.c:50:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1maaron_buggy_code2.c:50:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1maaron_buggy_code2.c:50:22: [0m[0;1;31merror: [0m[1mexpression result unused [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m6 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:50:18: [0m[0;1;31merror: [0m[1mincompatible pointer to integer conversion assigning to 'int' from
+      'int [count]' [-Werror,-Wint-conversion][0m
+            b[k] = a k];
+[0;1;32m                 ^ ~
+[0m[1maaron_buggy_code2.c:50:21: [0m[0;1;31merror: [0m[1mexpected ';' after expression[0m
+            b[k] = a k];
+[0;1;32m                    ^
+[0m[0;32m                    ;
+[0m[1maaron_buggy_code2.c:50:23: [0m[0;1;31merror: [0m[1mextraneous ']' before ';'[0m
+            b[k] = a k];
+[0;1;32m                      ^
+[0m[1maaron_buggy_code2.c:50:22: [0m[0;1;31merror: [0m[1mexpression result unused [-Werror,-Wunused-value][0m
+            b[k] = a k];
+[0;1;32m                     ^
+[0m[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m5 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:50:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            b[k] = [a k];
+[0;1;32m                   ^
+[0m[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m2 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:29:27: [0m[0;1;31merror: [0m[1mdivision by zero is undefined [-Werror,-Wdivision-by-zero][0m
+        number2 = number2 / 0;
+[0;1;32m                          ^ ~
+[0m[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m2 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:29:17: [0m[0;1;31merror: [0m[1mexplicitly assigning a variable of type 'long long' to itself
+      [-Werror,-Wself-assign][0m
+        number2 = number2;
+[0;1;32m        ~~~~~~~ ^ ~~~~~~~
+[0m[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m2 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:29:9: [0m[0;1;31merror: [0m[1mexpression result unused [-Werror,-Wunused-value][0m
+        number2;
+[0;1;32m        ^~~~~~~
+[0m[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m2 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:113:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1maaron_buggy_code2.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:112:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m[1maaron_buggy_code2.c:113:1: [0m[0;1;31merror: [0m[1mextraneous closing brace ('}')[0m
+}
+[0;1;32m^
+[0m2 errors generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:113:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1maaron_buggy_code2.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:113:1: [0m[0;1;31merror: [0m[1mcontrol may reach end of non-void function [-Werror,-Wreturn-type][0m
+}
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+[1maaron_buggy_code2.c:113:2: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+}
+[0;1;32m ^
+[0m[1maaron_buggy_code2.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m1 error generated.
+make: *** [aaron_buggy_code2] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make aaron_buggy_code2
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    aaron_buggy_code2.c  -lcs50 -lm -o aaron_buggy_code2
+jharvard@appliance:~/cs280r-fp/tests$ 
+Script done on Sat May  2 17:21:30 2015
