@@ -139,12 +139,15 @@ exports.errors = [{
         return "Seems like you have a wrong character on line " + line + ". It is either an extraneous character and you can delete it or you need to replace it with the correct character.";
     }
 },
+/*
+ * For some reason this regex throws errors
 {
     "regex" : "(.*?):(\\d*):(\\d*): error: incompatible pointer to integer conversion assigning to '(.*?)' from '(.*?)' \\ [-Werror,-Wint-conversion\\]\n.*\n.*$",
     "callback" : function (error_string, filename, line, char, type1, type2) {
         return "Seems like you're trying to convert a pointer variable into an integer variable on line " + line;
     }
 },
+*/
 {
     "regex" : "(.*?):(\\d*):(\\d*): error: extraneous '(.*?)' before '(.*?)'",
     "callback" : function (error_string, filename, line, char, symbol1, symbol2) {
