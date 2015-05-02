@@ -115,6 +115,7 @@ exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: unused variable '(.*?)' \\[-Werror,-Wunused-variable\\]$",
 
     "callback" : function(error_string, filename, line, char, variable) {
+    return "Looks like the variable " + variable + " is unused. Best to remove it if you're not going to use it to save memory!";
     }
 },
 {
