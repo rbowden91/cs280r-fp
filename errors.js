@@ -52,10 +52,10 @@ exports.errors = [{
     }
 },
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: expected ';' after expression\n.*\n.*\n.*$",
+    "regex" : "(.*?):(\\d*):(\\d*): error: expected '(.*?)' after expression\n.*\n.*\n.*$",
 
-    "callback": function(error_string, filename, line, char) {
-	   return "Looks like you're missing a semi-colon (;) on line " + line + ". It might also be helpful to check line " + (line - 1) + " for errors."
+    "callback": function(error_string, filename, line, char, symbol) {
+	   return "Looks like you're missing a " + symbol + " on line " + line + ". It might also be helpful to check line " + (line - 1) + " for errors."
     }
 },
 {
@@ -131,6 +131,31 @@ exports.errors = [{
     "callback" : function(error_string, filename, line, char, variable) {
     }
 
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: expected expression \n.*\n.*$",
+    "callback" : function (error_string, filename, line, char) {
+        return "Seems like you have a wrong character on line " + line + ". It is either an extraneous character and you can delete it or you need to replace it with the correct character.";
+    }
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: incompatible pointer to integer conversion assigning to '(.*?)' from '(.*?)' \\ [-Werror,-Wint-conversion\\]\n.*\n.*$",
+    "callback" : function (error_string, filename, line, char, type1, type2) {
+        return "Seems like you're trying to convert a pointer variable into an integer variable on line " + line;
+    }
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: extraneous '(.*?)' before '(.*?)'",
+    "callback" : function (error_string, filename, line, char, symbol1, symbol2) {
+        return "Looks like you have an extraneous symbol " + symbol1 + " before " + symbol2 + " on line " + 
+        line + ". It might help to check if " + symbol1 + " is missing its match.";
+    }
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: dividion by zero is undefined \\[-Wdivision,-Wdivision-by-zero\\]",
+    "callback" : function (error_string, filename, line, char) {
+        return "Looks like you're trying to divide by 0. That is not possible since it will return 'undefined'. Check whether you need to divide by some other variable or number or not divide at all.";
+    }
 }
     // incompatible pointer types returning 'int **' from a function with result type 'int *'; dereference with * (test19)
     // incompatible pointer types returning 'int *' from a function with result type 'int **'; take the address with & (test20)
