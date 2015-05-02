@@ -133,7 +133,7 @@ exports.errors = [{
 
 },
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: expected expression \n.*\n.*$",
+    "regex" : "(.*?):(\\d*):(\\d*): error: expected expression",
     "callback" : function (error_string, filename, line, char) {
         return "Seems like you have a wrong character on line " + line + ". It is either an extraneous character and you can delete it or you need to replace it with the correct character.";
     }
