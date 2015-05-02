@@ -1,0 +1,120 @@
+Script started on Sat May  2 18:08:45 2015
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code  1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:18:5: [0m[0;1;31merror: [0m[1mimplicitly declaring library function 'printf' with type 'int (const char *, ...)'
+      [-Werror][0m
+    printf("Enter positive integer values for the following: \n");
+[0;1;32m    ^
+[0m[1mbuggy_code1.c:18:5: [0m[0;1;30mnote: [0mplease include the header <stdio.h> or explicitly provide a declaration for
+      'printf'[0m
+[1mbuggy_code1.c:35:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:35:21: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'd'[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                    ^
+[0m[1mbuggy_code1.c:51:18: [0m[0;1;31merror: [0m[1mexpected ';' after break statement[0m
+            break
+[0;1;32m                 ^
+[0m[0;32m                 ;
+[0m[1mbuggy_code1.c:116:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ clear
+[H[2Jjharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:18:5: [0m[0;1;31merror: [0m[1mimplicitly declaring library function 'printf' with type 'int (const char *, ...)'
+      [-Werror][0m
+    printf("Enter positive integer values for the following: \n");
+[0;1;32m    ^
+[0m[1mbuggy_code1.c:18:5: [0m[0;1;30mnote: [0mplease include the header <stdio.h> or explicitly provide a declaration for
+      'printf'[0m
+[1mbuggy_code1.c:35:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:35:21: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'd'[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                    ^
+[0m[1mbuggy_code1.c:51:18: [0m[0;1;31merror: [0m[1mexpected ';' after break statement[0m
+            break
+[0;1;32m                 ^
+[0m[0;32m                 ;
+[0m[1mbuggy_code1.c:116:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:16:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:36:20: [0m[0;1;31merror: [0m[1mexpected expression[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                   ^
+[0m[1mbuggy_code1.c:36:21: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'd'[0m
+            printf(%d, "Wrong input. Please Retry:");
+[0;1;32m                    ^
+[0m[1mbuggy_code1.c:52:18: [0m[0;1;31merror: [0m[1mexpected ';' after break statement[0m
+            break
+[0;1;32m                 ^
+[0m[0;32m                 ;
+[0m[1mbuggy_code1.c:117:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m4 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:52:18: [0m[0;1;31merror: [0m[1mexpected ';' after break statement[0m
+            break
+[0;1;32m                 ^
+[0m[0;32m                 ;
+[0m[1mbuggy_code1.c:117:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m2 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:117:1: [0m[0;1;31merror: [0m[1mexpected '}'[0m
+[0;1;32m^
+[0m[1mbuggy_code1.c:17:1: [0m[0;1;30mnote: [0mto match this '{'[0m
+{
+[0;1;32m^
+[0m1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make gu  buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+[1mbuggy_code1.c:23:42: [0m[0;1;31merror: [0m[1munused variable 'total' [-Werror,-Wunused-variable][0m
+    int msf = 0,fsm = 0,fsf = 0,msm = 0, total = 0;
+[0;1;32m                                         ^
+[0m1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ make buggy) _code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+jharvard@appliance:~/cs280r-fp/tests$ ./buggy_code1
+Enter positive integer values for the following: 
+M spotting F:4
+F spotting M:5
+F spotting F:6
+M spotting M:7
+
+Who is spotting whom? 
+
+               ###  
+          ###  ###  
+     ###  ###  ###  
+###  ###  ###  ###  
+###  ###  ###  ###  
+###  ###  ###  ###  
+M4F  F4M  F4F  M4M 
+jharvard@appliance:~/cs280r-fp/tests$ 
+Script done on Sat May  2 18:17:41 2015
