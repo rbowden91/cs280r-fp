@@ -153,12 +153,6 @@ exports.errors = [{
     }
 },
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: dividion by zero is undefined \\[-Wdivision,-Wdivision-by-zero\\]",
-    "callback" : function (error_string, filename, line, char) {
-        return "Looks like you're trying to divide by 0. That is not possible since it will return 'undefined'. Check whether you need to divide by some other variable or number or not divide at all.";
-    }
-},
-{
     "regex" : "(.*?):(\\d*):(\\d*): error: expected '(.*?)'",
     "callback" : function (error_string, filename, line, char) {
         return "You're missing a brace on line " + line + ". You might want to add a brace on this line to match a brace from earlier in the code.";
