@@ -190,7 +190,8 @@ exports.errors = [{
     // remainder by zero is undefined (42)
 
     // struct stuff?
+
+    // git is acting weird
 ]
 
-]
 
