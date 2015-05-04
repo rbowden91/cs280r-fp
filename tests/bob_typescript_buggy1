@@ -1,0 +1,81 @@
+jharvard@appliance (~): cd cs280r-fp/tests/
+jharvard@appliance (~/cs280r-fp/tests): script
+Script started, file is typescript
+jharvard@appliance:~/cs280r-fp/tests$ make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:18:5: error: implicitly declaring library function 'printf' with type 'int (const char *, ...)'
+      [-Werror]
+    printf("Enter positive integer values for the following: \n");
+    ^
+buggy_code1.c:18:5: note: please include the header <stdio.h> or explicitly provide a declaration for
+      'printf'
+buggy_code1.c:35:20: error: expected expression
+            printf(%d, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:35:21: error: use of undeclared identifier 'd'
+            printf(%d, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:49:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:116:1: error: expected '}'
+^
+buggy_code1.c:16:1: note: to match this '{'
+{
+^
+5 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance:~/cs280r-fp/tests$ Script done, file is typescript
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:36:20: error: expected expression
+            printf(%d, "Wrong input. Please Retry:");
+                   ^
+buggy_code1.c:36:21: error: use of undeclared identifier 'd'
+            printf(%d, "Wrong input. Please Retry:");
+                    ^
+buggy_code1.c:50:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+4 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:50:23: error: expected ';' after expression
+        fsf = GetInt()
+                      ^
+                      ;
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+2 errors generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:117:1: error: expected '}'
+^
+buggy_code1.c:17:1: note: to match this '{'
+{
+^
+1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+buggy_code1.c:23:42: error: unused variable 'total' [-Werror,-Wunused-variable]
+    int msf = 0,fsm = 0,fsf = 0,msm = 0, total = 0;
+                                         ^
+1 error generated.
+make: *** [buggy_code1] Error 1
+jharvard@appliance (~/cs280r-fp/tests): make buggy_code1
+clang -ggdb3 -O0 -std=c99 -Wall -Werror    buggy_code1.c  -lcs50 -lm -o buggy_code1
+jharvard@appliance (~/cs280r-fp/tests): 
+

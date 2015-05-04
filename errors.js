@@ -165,6 +165,7 @@ exports.errors = [{
     "regex" : "(.*?):(\\d*):(\\d*): error: expected '(.*?)'",
     "callback" : function (error_string, filename, line, char) {
         return "You're missing a brace on line " + line + ". You might want to add a brace on this line to match a brace from earlier in the code.";
+    }
 }
     // incompatible pointer types returning 'int **' from a function with result type 'int *'; dereference with * (test19)
     // incompatible pointer types returning 'int *' from a function with result type 'int **'; take the address with & (test20)
@@ -190,7 +191,5 @@ exports.errors = [{
     // remainder by zero is undefined (42)
 
     // struct stuff?
-]
-
 ]
 
