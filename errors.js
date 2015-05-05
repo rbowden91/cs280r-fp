@@ -159,7 +159,7 @@ exports.errors = [{
     }
 },
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: division by zero is undefined \\[-Werror,-Wdivision-by-zero\\]\n.*$",
+    "regex" : "(.*?):(\\d*):(\\d*): error: division by zero is undefined \\[-Werror,-Wdivision-by-zero\\]\n.*\n.*$",
     "callback" : function (error_string, filename, line, char) {
         return "You're dividing by zero on line " + line + ", but division by zero is an undefined operation.";
     }
