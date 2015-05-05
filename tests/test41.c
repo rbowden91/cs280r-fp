@@ -1,4 +1,4 @@
-// generates "division by zero is undefined" linker error
+// generates "division by zero is undefined" error
 
 int main(void)
 {

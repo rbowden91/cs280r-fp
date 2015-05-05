@@ -139,15 +139,12 @@ exports.errors = [{
         return "Seems like you have a wrong character on line " + line + ". It is either an extraneous character and you can delete it or you need to replace it with the correct character.";
     }
 },
-/*
- * For some reason this regex throws errors
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: incompatible pointer to integer conversion assigning to '(.*?)' from '(.*?)' \\ [-Werror,-Wint-conversion\\]\n.*\n.*$",
+    "regex" : "(.*?):(\\d*):(\\d*): error: incompatible pointer to integer conversion assigning to '(.*?)' from '(.*?)' \\[-Werror,-Wint-conversion\\]\n.*\n.*$",
     "callback" : function (error_string, filename, line, char, type1, type2) {
         return "Seems like you're trying to convert a pointer variable into an integer variable on line " + line;
     }
 },
-*/
 {
     "regex" : "(.*?):(\\d*):(\\d*): error: extraneous '(.*?)' before '(.*?)'",
     "callback" : function (error_string, filename, line, char, symbol1, symbol2) {
@@ -156,15 +153,15 @@ exports.errors = [{
     }
 },
 {
-    "regex" : "(.*?):(\\d*):(\\d*): error: dividion by zero is undefined \\[-Wdivision,-Wdivision-by-zero\\]",
-    "callback" : function (error_string, filename, line, char) {
-        return "Looks like you're trying to divide by 0. That is not possible since it will return 'undefined'. Check whether you need to divide by some other variable or number or not divide at all.";
-    }
-},
-{
     "regex" : "(.*?):(\\d*):(\\d*): error: expected '(.*?)'",
     "callback" : function (error_string, filename, line, char) {
         return "You're missing a brace on line " + line + ". You might want to add a brace on this line to match a brace from earlier in the code.";
+    }
+},
+{
+    "regex" : "(.*?):(\\d*):(\\d*): error: division by zero is undefined \\[-Werror,-Wdivision-by-zero\\]\n.*$",
+    "callback" : function (error_string, filename, line, char) {
+        return "You're dividing by zero on line " + line + ", but division by zero is an undefined operation.";
     }
 }
     // incompatible pointer types returning 'int **' from a function with result type 'int *'; dereference with * (test19)
@@ -187,7 +184,6 @@ exports.errors = [{
     // expected parameter declarator (test38)
     // control reaches end of non-void function (test39)
     // undefined reference to `main' (test40)
-    // division by zero is undefined (41)
     // remainder by zero is undefined (42)
 
     // struct stuff?
