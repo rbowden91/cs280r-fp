@@ -29,7 +29,6 @@ min(void)
         number2 = number2 / 10;
         count ++;
         )
-     
     }
    // returning invalid if the number isn't right.
     if(count != 15 && count != 16 && count != 13)
